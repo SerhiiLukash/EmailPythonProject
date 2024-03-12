@@ -28,7 +28,9 @@ class NewMessagePage(BasePage):
 
     @allure.step("Fill in body field")
     def fill_in_body(self, body_text):
+        self.wait.until(EC.element_to_be_clickable(self.BODY_AREA)).click()
         self.wait.until(EC.element_to_be_clickable(self.BODY_AREA)).send_keys(body_text)
+
 
     @allure.step("Click Send button")
     def click_send(self):

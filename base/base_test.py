@@ -12,7 +12,7 @@ class BaseTest:
 
     login_page: LoginPage
     new_message_page: NewMessagePage
-    personal_page: PersonalPage
+
 
     @pytest.fixture(autouse=True)
     def setup(self, request, driver):
@@ -21,4 +21,3 @@ class BaseTest:
 
         request.cls.login_page = LoginPage(driver)
         request.cls.new_message_page = NewMessagePage(driver)
-        request.cls.personal_page = PersonalPage(driver)
