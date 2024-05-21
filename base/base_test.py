@@ -1,6 +1,6 @@
 import pytest
 
-from pages.personal_page import PersonalPage
+
 from pages.login_page import LoginPage
 from pages.new_message_page import NewMessagePage
 from config.data import Data

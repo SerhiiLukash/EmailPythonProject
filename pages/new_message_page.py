@@ -1,4 +1,5 @@
 import allure
+import selenium
 from base.base_page import BasePage
 from config.links import Links
 from selenium.webdriver.support import expected_conditions as EC
@@ -8,9 +9,10 @@ class NewMessagePage(BasePage):
     PAGE_URL = Links.INBOX_PAGE
 
     NEW_MESSAGE_BUTTON = ("xpath", "//button[text()='New message']")
-    RECIPIENT_FIELD = ("xpath", "//input[@placeholder='Email address']")
+    RECIPIENT_FIELD = ("xpath", "//input[@placeholder='To']")
     SUBJECT_FIELD = ("xpath", "//input[@class='input-element w-full']")
-    BODY_AREA = ("xpath", "(//div[@id='rooster-editor']//div)[1]")
+    # BODY_AREA = ("xpath", "(//div[@id='rooster-editor']//div)[1]")
+    BODY_AREA = ("xpath", "//div/*[contains(text(),'Sent with')]")
     SEND_BUTTON = ("xpath", "//button[text()='Send']")
 
     @allure.step("Click new message button")

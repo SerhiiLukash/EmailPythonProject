@@ -25,7 +25,8 @@ def driver(request):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--lang=en-GB")
-    service = Service(ChromeDriverManager(driver_version="121.0.6167.161").install())
+    # service = Service(ChromeDriverManager(driver_version="121.0.6167.161").install())
+    service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
     request.cls.driver = driver
     driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
